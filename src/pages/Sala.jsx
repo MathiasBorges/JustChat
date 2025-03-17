@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { databases, DATABASE_ID, COLLECTION_ID_MESSAGES, client } from "../WriteConfig";
+import {
+  databases,
+  DATABASE_ID,
+  COLLECTION_ID_MESSAGES,
+  client,
+} from "../WriteConfig";
 import { ID, Query, Account } from "appwrite";
 import "../sala.css";
 
-export default function Sala() {
+function Sala() {
   const account = new Account(client);
   const [messages, setMessages] = useState([]);
   const [messagemCorpo, setMensagem] = useState("");
@@ -57,9 +62,11 @@ export default function Sala() {
 
   const pegaMensagens = async () => {
     try {
-      const resposta = await databases.listDocuments(DATABASE_ID, COLLECTION_ID_MESSAGES, [
-        Query.orderDesc("$createdAt"),
-      ]);
+      const resposta = await databases.listDocuments(
+        DATABASE_ID,
+        COLLECTION_ID_MESSAGES,
+        [Query.orderDesc("$createdAt")]
+      );
       console.log("Resposta BD:", resposta);
       setMessages(resposta.documents);
     } catch (error) {
@@ -78,7 +85,13 @@ export default function Sala() {
         />
         <div className="btn-box">
           <input className="btn-send" type="submit" value={"Enviar"} />
-          <input style={{ marginLeft: 10 }} className="btn-send" type="button" onClick={logout} value={"LogOut"} />
+          <input
+            style={{ marginLeft: 10 }}
+            className="btn-send"
+            type="button"
+            onClick={logout}
+            value={"LogOut"}
+          />
         </div>
       </form>
 
@@ -98,3 +111,4 @@ export default function Sala() {
     </div>
   );
 }
+export default Sala;
