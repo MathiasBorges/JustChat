@@ -8,7 +8,7 @@ import {
 import { ID, Query, Account } from "appwrite";
 import "../sala.css";
 
-function Sala() {
+const Sala = ()=> {
   const account = new Account(client);
   const [messages, setMessages] = useState([]);
   const [messagemCorpo, setMensagem] = useState("");

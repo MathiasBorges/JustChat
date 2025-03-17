@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
+import { Sala } from "./pages/Sala";
 import { SignIn } from "./pages/SignIn";
-import { Sala } from "./pages/sala";
 import { Account } from "appwrite";
 import client from "./WriteConfig";
 
