@@ -1,0 +1,75 @@
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #303030;
+    border-radius: 5px;
+  }
+::-webkit-scrollbar-thumb{background-color:bisque;border-radius: 15px;}
+.salaBox{
+    width: 70vw;max-height: 90vh;
+    background-color: rgb(34, 44, 56);
+    border-radius: 3px;
+    padding: 2em;
+    overflow: auto;
+    overflow-x: hidden;
+    box-shadow: 0 0 25px black;
+}
+
+.dadosBox{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0.5%;
+    padding: 1% 1% 0% 1%;
+    margin-bottom: 10%;
+    border-radius: 3px;
+    border:1px solid;
+    width: 75%;
+    
+}
+
+.header-mensagem{
+    color: rgb(168, 148, 118);
+    display: flex;
+    gap: 1rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-bottom: 1px solid;
+    
+}
+.header-mensagem small{
+    align-self:center;
+    font-size: 1.5vmin;
+    color: rgb(184, 184, 184);
+    
+}
+.corpo-mensagem{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0% 0% 5% 2.5%;
+}
+
+textarea{
+    resize: none;
+    overflow: auto;
+    width: 100%;
+    outline: none;
+    transition: 0.5s;
+    opacity: 70%;
+}
+textarea:focus{box-shadow: 0 0 10px pink;border-radius: 3px;opacity: 1;}
+
+.btn-box{
+    width: 100%;display: flex;justify-content: center;
+}
+
+.btn-send{
+    margin: 1% 0 5% 0;
+    width: 25%;background: white;color: black;cursor: pointer;outline: none;
+    border: none;border-radius: 3px;
+    transition: 1s;
+    box-shadow: 7px 10px 1px black;
+}
+.btn-send:hover{
+    scale: 1.05;
+    background: black;color: white;
+    box-shadow: none;
+}
