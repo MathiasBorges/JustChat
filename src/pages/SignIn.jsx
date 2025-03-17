@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Account, ID } from "appwrite";
 import "../sign.css";
-import client, {databases,DATABASE_ID, COLLECTION_ID_MESSAGES } from "../WriteConfig"; // Importa a configuração do Appwrite
+import client, {databases,DATABASE_ID, COLLECTION_ID_MESSAGES } from "../WriteConfig";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
