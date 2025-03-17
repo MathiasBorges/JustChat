@@ -4,7 +4,7 @@ import { Sala } from "./pages/sala";
 import { Account } from "appwrite";
 import client from "./WriteConfig";
 
-function App() {
+const App = ()=> {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
