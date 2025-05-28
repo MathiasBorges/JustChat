@@ -1,78 +1,93 @@
-*{
-  margin-block: 0;
+
+* {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-body,html,#root{
+
+body, html, #root {
   min-height: 100vh;
   min-width: 100vw;
+  font-family: 'Inter', sans-serif; 
+  color: #333; 
 }
 
-#root{
-  background-color: #33385a;
-  position: relative;
+
+#root {
+  background-color: #33385a; 
   display: flex;
-  align-items: center; justify-content: center;
-  animation: showing .3s ease-in;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.5s ease-out forwards; 
 }
-@keyframes showing {
-  from{
-    display: none;
+
+
+@keyframes fadeIn {
+  from {
     opacity: 0;
-  }to{
-    display: flex;
+  }
+  to {
     opacity: 1;
   }
 }
 
-#container{
-  max-height: 50%;max-width: 100%;
-  padding: 2rem 2rem 6rem 2rem;
-  background-color: #fff;
+
+#container {
+  max-width: 400px; 
+  width: 90%; 
+  padding: 2.5rem; 
+  background-color: #ffffff;
+  border-radius: 8px; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
   position: relative;
-  font-family:sans-serif;
-  border-radius: 0.1rem;
-  box-shadow: 0 0 25px white;
-  font-weight: 550;
+  font-weight: 400; 
 }
 
-input{
-  border-radius: 0rem;
-  border: 2px solid grey;
-  padding: 0.65rem;
+
+input {
+  border: 1px solid #dcdcdc; 
+  padding: 0.8rem 1rem; 
   width: 100%;
-  border-top: none;border-left: none;border-right: none;
+  border-radius: 4px; 
+  transition: border-color 0.3s ease; 
 }
-input:focus{
+
+input:focus {
   outline: none;
+  border-color: #007bff; 
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); 
 }
 
-#primeiroP{
-  margin-top: 1.5rem;
-}
-p{
-  margin: 1.2rem 0 0.2rem 0.3rem;
+
+p {
+  margin-bottom: 0.5rem; 
+  margin-top: 1.2rem; 
+  font-size: 0.9rem; 
+  color: #555; 
 }
 
-#cad{
+#primeiroP {
+  margin-top: 2rem; 
+}
+
+
+#cad {
   width: 100%;
-  padding: 0.6rem;
-  border-radius: 0.4rem;
-  font-family: Arial;
-  margin-top: 1.5rem;
+  padding: 0.9rem; 
+  border-radius: 6px; 
   border: none;
-  text-shadow: 1px 5px 25px black;
-  color: #fff;
-  background: linear-gradient(-45deg, #7e90e9,#fd5754);
-  font-size: 15px;
+  color: #33385a;
+  background: bisque; 
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.7s;
-  box-shadow: 5px 5px 25px black;
-}
-#cad:hover{
-scale: 1.07;
-box-shadow:0 1px 10px black;
+  transition: all 0.3s ease; 
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2); 
+  margin-top: 2.5rem; 
 }
 
+#cad:hover {
+  transform: translateY(-2px); 
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3); 
+}

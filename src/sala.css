@@ -1,78 +1,214 @@
-::-webkit-scrollbar {
-    width: 10px;
-    background-color: #303030;
-    border-radius: 5px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html, #root {
+  min-height: 100vh;
+  min-width: 100vw;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+#root {
+  background-color: #33385a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-::-webkit-scrollbar-thumb{background-color:bisque;border-radius: 15px;}
-.salaBox{
-    width: 90vw;max-height: 90vh;
-    background-color: rgb(34, 44, 56);
-    border-radius: 3px;
-    padding: 2em;
-    overflow: auto;
-    overflow-x: hidden;
-    box-shadow: 0 0 25px black;
+  to {
+    opacity: 1;
+  }
 }
 
-.dadosBox{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin: 0.5%;
-    padding: 1% 1% 0% 1%;
-    margin-bottom: 10%;
-    border-radius: 3px;
-    border:1px solid;
-    width: 100%;
-    
+
+#container { 
+  max-width: 400px;
+  width: 90%;
+  padding: 2.5rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  font-weight: 400;
 }
 
-.header-mensagem{
-    color: rgb(168, 148, 118);
-    display: flex;
-    gap: 1rem;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    border-bottom: 1px solid;
-    
-}
-.header-mensagem small{
-    align-self:center;
-    font-size: 1.5vmin;
-    color: rgb(184, 184, 184);
-    
-}
-.corpo-mensagem{
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 0% 0% 5% 2.5%;
+.salaBox { 
+  width: 90vw;
+  max-height: 90vh;
+  background-color: #2b3149; 
+  border-radius: 8px; 
+  padding: 2rem; 
+  overflow: auto;
+  overflow-x: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); 
+  display: flex;
+  flex-direction: column; 
 }
 
-textarea{
-    resize: none;
-    overflow: auto;
-    width: 100%;
-    outline: none;
-    transition: 0.5s;
-    opacity: 70%;
-}
-textarea:focus{box-shadow: 0 0 10px pink;border-radius: 3px;opacity: 1;}
 
-.btn-box{
-    width: 100%;display: flex;justify-content: center;
+::-webkit-scrollbar {
+  width: 12px; 
+  background-color: #3f4561; 
+  border-radius: 6px; 
+}
+::-webkit-scrollbar-thumb {
+  background-color: #f7a072; 
+  border-radius: 10px; 
+  border: 3px solid #3f4561; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #f58e57; 
 }
 
-.btn-send{
-    margin: 1% 0 5% 0;
-    width: 25%;background: white;color: black;cursor: pointer;outline: none;
-    border: none;border-radius: 3px;
-    transition: 1s;
-    box-shadow: 7px 10px 1px black;
+
+input {
+  border: 1px solid #dcdcdc;
+  padding: 0.8rem 1rem;
+  width: 100%;
+  border-radius: 4px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-.btn-send:hover{
-    scale: 1.05;
-    background: black;color: white;
-    box-shadow: none;
+
+input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
 }
-h1{
-    font-size: 3vw;
+
+textarea { 
+  resize: vertical; 
+  overflow: auto;
+  width: 100%;
+  outline: none;
+  transition: all 0.3s ease; 
+  opacity: 1; 
+  border: 1px solid #dcdcdc; 
+  padding: 0.8rem 1rem;
+  border-radius: 4px;
+  min-height: 80px; 
+  color: #333; 
+}
+
+textarea:focus {
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); 
+  border-color: #007bff; 
+}
+
+
+p {
+  margin-bottom: 0.5rem;
+  margin-top: 1.2rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+#primeiroP {
+  margin-top: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem; 
+  color: #5f5f5f; 
+  margin-bottom: 1.5rem; 
+  text-align: center; 
+  font-weight: 600; 
+}
+
+
+#cad { 
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 6px;
+  border: none;
+  color: #33385a;
+  background: bisque;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+  margin-top: 2.5rem;
+}
+
+#cad:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+}
+
+.btn-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem; 
+}
+
+.btn-send {
+  margin: 1.5rem 0 0.5rem 0; 
+  width: 30%; 
+  padding: 0.8rem 1.5rem; 
+  background: bisque; 
+  color: #33385a; 
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 6px; 
+  transition: all 0.3s ease; 
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3); 
+  font-weight: 600;
+}
+
+.btn-send:hover {
+  transform: translateY(-2px); 
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4); 
+}
+
+
+.dadosBox {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem; 
+  padding: 1rem 1.5rem; 
+  border-radius: 8px; 
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+  background-color: rgba(255, 255, 255, 0.05); 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.3s ease; 
+}
+
+.dadosBox:hover {
+  transform: translateY(-3px); 
+}
+
+.header-mensagem {
+  color: #f7a072; 
+  display: flex;
+  gap: 0.8rem; 
+  font-family: 'Inter', sans-serif; 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15); 
+  padding-bottom: 0.5rem; 
+  margin-bottom: 0.8rem; 
+  align-items: baseline; 
+}
+
+.header-mensagem small {
+  font-size: 0.8rem; 
+  color: #b0b0b0; 
+  font-weight: 300; 
+}
+
+.corpo-mensagem {
+  color: #e0e0e0; 
+  font-family: 'Inter', sans-serif; 
+  padding: 0 0.5rem; 
+  line-height: 1.6; 
+  font-size: 1rem;
 }
